@@ -1,0 +1,15 @@
+﻿@mixin margin($value...) {
+    margin: $value;
+}
+
+@mixin padding($value...) {
+    padding: $value;
+}
+
+@mixin text-shadow($h-offset,$v-offset,$blur-amount,$color) {
+    text-shadow: $h-offset $v-offset $blur-amount $color;
+}
+
+@mixin box-shadow($h-offset,$v-offset,$blur-amount,$color) {
+    box-shadow: $h-offset $v-offset $blur-amount $color;
+}
