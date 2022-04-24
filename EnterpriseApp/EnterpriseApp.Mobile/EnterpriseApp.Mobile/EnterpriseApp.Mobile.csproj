@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+	</PropertyGroup>
+
+	<Import Project="..\..\..\SolutionItems\build.props"/>
+
+	<ItemGroup>
+		<Folder Include="Assets\"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Resizetizer.NT" Version="0.3.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Xamarin.Essentials" Version="1.7.2" />
+		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+		<PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.5.0" />
+		<PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.5.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.16" />
+		<PackageReference Include="Xamarin.Plugin.SharedTransitions" Version="2.4.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\EnterpriseApp.Core\EnterpriseApp.Core\EnterpriseApp.Core.csproj"/>
+	</ItemGroup>
+
+	<!--Wildcard representation for jpg,jpeg,png,svg,ttf,otf,xaml,resx-->
+	<ItemGroup>
+		<SharedImage Include="Assets\**\*.jpg" />
+		<SharedImage Include="Assets\**\*.jpeg" />
+		<SharedImage Include="Assets\**\*.png" />
+
+		<EmbeddedResource Include="Assets\**\*.svg" />
+		<EmbeddedResource Include="Assets\**\*.ttf" />
+		<EmbeddedResource Include="Assets\**\*.otf" />
+
+		<Compile Update="**\*.Designer.cs" DesignTime="True" />
+		<Compile Update="**\*.Designer.cs" AutoGen="True" DesignTime="True" DependentUpon="$([System.String]::Copy('%(FileName)').Replace('.Designer', '.resx'))" />
+		<Compile Update="**\*.Model.cs" DependentUpon="$([System.String]::Copy('%(FileName)').Replace('.Model', '.xaml'))" />
+		<Compile Update="**\*.ViewModel.cs" DependentUpon="$([System.String]::Copy('%(FileName)').Replace('.ViewModel', '.xaml'))" />
+		<Compile Update="**\*.xaml.cs" DependentUpon="$([System.String]::Copy('%(FileName)'))" />
+		<EmbeddedResource Update="**\*.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
+		<EmbeddedResource Update="Themes\**\*.xaml" SubType="Designer" />
+		<EmbeddedResource Update="**\*.resx" Generator="ResXFileCodeGenerator" LastGenOutput="$([System.String]::Copy('%(FileName)')).Designer.cs" />
+	</ItemGroup>
+
+</Project>

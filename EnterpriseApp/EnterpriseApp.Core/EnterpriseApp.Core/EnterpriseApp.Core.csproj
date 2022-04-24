@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+	</PropertyGroup>
+
+	<Import Project="..\..\..\SolutionItems\build.props" />
+
+	<ItemGroup>
+		<Folder Include="Extensions\" />
+		<Folder Include="CustomTypes\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.16" />
+	</ItemGroup>
+
+</Project>

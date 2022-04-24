@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<OutputType>WinExe</OutputType>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<Import Project="..\..\..\SolutionItems\build.props" />
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\EnterpriseApp.Core\EnterpriseApp.Core\EnterpriseApp.Core.csproj" />
+	</ItemGroup>
+
+</Project>

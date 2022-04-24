@@ -1,0 +1,38 @@
+﻿<Project Sdk="Tizen.NET.Sdk/1.1.7">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>tizen60</TargetFramework>
+	</PropertyGroup>
+
+	<Import Project="..\..\..\SolutionItems\build.props" />
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>None</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Resizetizer.NT" Version="0.3.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Xamarin.Essentials" Version="1.7.2" />
+		<PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+		<PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.5.0" />
+		<PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.5.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.16" />
+		<PackageReference Include="Xamarin.Plugin.SharedTransitions" Version="2.4.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="lib\" />
+		<Folder Include="res\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\EnterpriseApp.Mobile\EnterpriseApp.Mobile.csproj" />
+	</ItemGroup>
+</Project>
